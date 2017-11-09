@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         }else progress = 100;
 
         if(progress == 100)
-            Toast.makeText(MainActivity.this, "Congratulations, you reached your daily goal", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "CONGRATZ", Toast.LENGTH_LONG).show();
     }
 
     public void add500Button(View view){
