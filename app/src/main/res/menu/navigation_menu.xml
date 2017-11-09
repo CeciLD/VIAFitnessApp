@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/exercises"
+        android:title="Exercises"
+        android:icon="@drawable/dumbell_navigaton_bar">
+    </item>
+    <item
+        android:id="@+id/custom_workout"
+        android:title="Custom Workout"
+        android:icon="@drawable/custom_workout_navigaton_bar">
+    </item>
+    <item
+        android:id="@+id/diets"
+        android:title="Diets"
+        android:icon="@drawable/diets_navigaton_bar">
+    </item>
+    <item
+        android:id="@+id/pedometer"
+        android:title="Pedometer"
+        android:icon="@drawable/pedometer_navigaton_bar">
+    </item>
+    <item
+        android:id="@+id/water_consumption"
+        android:title="Water Consumption"
+        android:icon="@drawable/water_consumption_navigaton_bar">
+    </item>
+</menu>
