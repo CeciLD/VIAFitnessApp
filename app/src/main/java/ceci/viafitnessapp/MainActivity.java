@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Diets", Toast.LENGTH_SHORT).show();
                 }
                 else if(id== R.id.pedometer) {
+                    setContentView(R.layout.activity_pedometer);
+
                     Toast.makeText(MainActivity.this, "Pedometer", Toast.LENGTH_SHORT).show();
                 }
                 else if(id== R.id.water_consumption) {
