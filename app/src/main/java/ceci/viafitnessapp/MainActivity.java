@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else if(id== R.id.pedometer) {
+                    setContentView(R.layout.activity_pedometer);
+
                     Toast.makeText(MainActivity.this, "Pedometer", Toast.LENGTH_SHORT).show();
                 }
                 else if(id== R.id.water_consumption) {
