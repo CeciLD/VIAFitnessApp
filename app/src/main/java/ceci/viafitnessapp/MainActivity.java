@@ -1,5 +1,6 @@
 package ceci.viafitnessapp;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
             //ACTIONS WHEN YOU CLICK ITEMS IN THE NAVIGATION BAR
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
                 int id = item.getItemId();
 
                 if (id == R.id.exercises) {
@@ -54,7 +56,10 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Creating a Custom Workout", Toast.LENGTH_SHORT).show();
                 }
                     else if (id == R.id.diets) {
+                    Intent intent = new Intent(MainActivity.this,DietActivity.class);
+
                     Toast.makeText(MainActivity.this, "Diets", Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
                 }
                 else if(id== R.id.pedometer) {
                     setContentView(R.layout.activity_pedometer);
@@ -90,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         }else progress = 100;
 
         if(progress == 100)
-            Toast.makeText(MainActivity.this, "CONGRATZ", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "Congratulations, you reached your daily goal", Toast.LENGTH_LONG).show();
     }
 
     public void add500Button(View view){
