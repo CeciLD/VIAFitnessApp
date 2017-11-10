@@ -20,9 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawer;
     private ActionBarDrawerToggle abdt1;
-    private Button button250;
-    private Button button500;
-    private ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,23 +55,17 @@ public class MainActivity extends AppCompatActivity {
                 }
                     else if (id == R.id.diets) {
                     Intent intent = new Intent(MainActivity.this,DietActivity.class);
-
-                    Toast.makeText(MainActivity.this, "Diets", Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 }
                 else if(id== R.id.pedometer) {
-                    setContentView(R.layout.activity_pedometer);
+                    Intent intent = new Intent(MainActivity.this,Pedometer.class);
+                    startActivity(intent);
 
-                    Toast.makeText(MainActivity.this, "Pedometer", Toast.LENGTH_SHORT).show();
                 }
                 else if(id== R.id.water_consumption) {
-                    Toast.makeText(MainActivity.this, "Water Consumption", Toast.LENGTH_SHORT).show();
-                    setContentView(R.layout.water_consumption);
+                    Intent intent = new Intent(MainActivity.this,WaterConsumation.class);
+                    startActivity(intent);
 
-                    //Creating progress bar
-                    progressBar = (ProgressBar) findViewById(R.id.progressBar);
-                    button250 = (Button) findViewById(R.id.button);
-                    button500 = (Button) findViewById(R.id.button2);
                 }
                 return true;
             }
@@ -86,27 +78,6 @@ public class MainActivity extends AppCompatActivity {
         return abdt1.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
 
-    private int progress = 0;
-    public void add250Button(View view){
 
-        if(progress<100){
-            progressBar.setProgress(progress + 8);
-            progress += 8;
-        }else progress = 100;
-
-        if(progress == 100)
-            Toast.makeText(MainActivity.this, "Congratulations, you reached your daily goal", Toast.LENGTH_LONG).show();
-    }
-
-    public void add500Button(View view){
-
-        if(progress<100){
-            progressBar.setProgress(progress + 16);
-            progress += 16;
-        }else progress = 100;
-
-        if(progress == 100)
-            Toast.makeText(MainActivity.this, "Congratulations, you reached your daily goal", Toast.LENGTH_LONG).show();
-    }
 
 }

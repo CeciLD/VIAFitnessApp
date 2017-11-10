@@ -17,7 +17,7 @@ public class Pedometer extends AppCompatActivity implements SensorEventListener,
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_pedometer);
 
 
         // Get an instance of the SensorManager
