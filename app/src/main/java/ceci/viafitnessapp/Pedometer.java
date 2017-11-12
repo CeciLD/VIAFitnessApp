@@ -25,6 +25,7 @@ public class Pedometer extends AppCompatActivity implements SensorEventListener,
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         simpleStepDetector = new StepDetector();
         simpleStepDetector.registerListener(this);
+        accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
         TvSteps = (TextView) findViewById(R.id.tv_steps);
     }
@@ -42,7 +43,6 @@ public class Pedometer extends AppCompatActivity implements SensorEventListener,
     protected void onResume() {
         super.onResume();
         running = true;
-        accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
         if (accel != null) {
             sensorManager.registerListener(Pedometer.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
