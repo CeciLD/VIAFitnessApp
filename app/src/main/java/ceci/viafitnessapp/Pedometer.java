@@ -1,18 +1,19 @@
 package ceci.viafitnessapp;
+
 import android.hardware.*;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.*;
 
 public class Pedometer extends AppCompatActivity implements SensorEventListener, StepListener {
     private TextView TvSteps;
-    private Button BtnStart, BtnStop;
     private StepDetector simpleStepDetector;
     private SensorManager sensorManager;
     private Sensor accel;
     private static final String TEXT_NUM_STEPS = "Steps: ";
-    private int numSteps;
+    private int numSteps = 0;
+    boolean running = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,42 +23,34 @@ public class Pedometer extends AppCompatActivity implements SensorEventListener,
 
         // Get an instance of the SensorManager
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         simpleStepDetector = new StepDetector();
         simpleStepDetector.registerListener(this);
 
         TvSteps = (TextView) findViewById(R.id.tv_steps);
-        BtnStart = (Button) findViewById(R.id.btn_start);
-        BtnStop = (Button) findViewById(R.id.btn_stop);
-
-
-
-        BtnStart.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                numSteps = 0;
-                sensorManager.registerListener(Pedometer.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
-
-            }
-        });
-
-
-        BtnStop.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                sensorManager.unregisterListener(Pedometer.this);
-
-            }
-        });
-
-
-
     }
 
+    @Override
+    protected void onPause() {
+
+        super.onPause();
+        sensorManager.unregisterListener(Pedometer.this);
+
+        running = false;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        running = true;
+        accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+        if (accel != null) {
+            sensorManager.registerListener(Pedometer.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
+        } else {
+            Toast.makeText(this, "Pedometer not supported", Toast.LENGTH_SHORT).show();
+
+        }
+    }
 
 
     @Override
@@ -66,7 +59,7 @@ public class Pedometer extends AppCompatActivity implements SensorEventListener,
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+        if (running) {
             simpleStepDetector.updateAccel(
                     event.timestamp, event.values[0], event.values[1], event.values[2]);
         }
