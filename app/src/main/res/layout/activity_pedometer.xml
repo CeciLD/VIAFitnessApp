@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
     android:layout_width="match_parent"
@@ -11,5 +12,23 @@
         android:layout_height="wrap_content"
         android:textSize="60dp"
         android:gravity="center" />
+<LinearLayout
+    android:layout_marginTop="200dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="bottom">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="200dp"
+        android:layout_height="160dp"
+        app:srcCompat="@drawable/pedometer_icon" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/pedometer_text" />
+</LinearLayout>
 
 </LinearLayout>
