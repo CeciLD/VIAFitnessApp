@@ -2,4 +2,6 @@
     <string name="app_name">VIAFitnessApp</string>
     <string name="open">NavBar</string>
     <string name="close">NavBar</string>
+    <string name="description">Description</string>
+    <string name="guide">Guide</string>
 </resources>

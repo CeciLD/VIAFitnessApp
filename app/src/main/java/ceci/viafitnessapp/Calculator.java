@@ -1,5 +1,7 @@
 package ceci.viafitnessapp;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,7 +12,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 public class Calculator extends AppCompatActivity {
-
+//SOMETHING
     EditText weight;
     EditText height;
     EditText age;
