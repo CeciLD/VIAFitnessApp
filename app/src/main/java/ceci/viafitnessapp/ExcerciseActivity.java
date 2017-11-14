@@ -57,7 +57,7 @@ listView.setAdapter(excersiceAdapter);
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        switch(position){
+                         switch(position){
                             case 0:
                                 Intent toBiceps = new Intent(ExcerciseActivity.this, BicepsActivity.class);
                                 startActivity(toBiceps);
