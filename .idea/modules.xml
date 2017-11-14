@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://C:\Users\Asus\AndroidStudioProjects\VIAFitnessApp1\VIAFitnessApp.iml" filepath="C:\Users\Asus\AndroidStudioProjects\VIAFitnessApp1\VIAFitnessApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/VIAFitnessApp1.iml" filepath="$PROJECT_DIR$/.idea/VIAFitnessApp1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/VIAFitnessApp.2.iml" filepath="$PROJECT_DIR$/VIAFitnessApp.2.iml" />
+      <module fileurl="file://C:\Users\Ceci\Desktop\Via University\Programs\AndroidApps\VIAFitnessApp.2\.idea\VIAFitnessApp1.iml" filepath="C:\Users\Ceci\Desktop\Via University\Programs\AndroidApps\VIAFitnessApp.2\.idea\VIAFitnessApp1.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
