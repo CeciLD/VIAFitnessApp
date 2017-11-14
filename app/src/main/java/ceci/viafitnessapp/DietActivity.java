@@ -22,7 +22,6 @@ public class DietActivity extends AppCompatActivity {
 
     private PlaceAdapter mPlaceAdapter;
     private FloatingActionButton floatingActionButton;
-    SearchView searchView;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,22 +69,10 @@ public class DietActivity extends AppCompatActivity {
         data.add(new Diets("Test", 7, "test",R.drawable.ab,null));
         data.add(new Diets("Test", 7, "test",R.drawable.abc,null));
 
-        searchView = (SearchView) findViewById(R.id.searchView);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
 
-            @Override
-            public boolean onQueryTextChange(String s) {
-                mPlaceAdapter.getFilter().filter(s);
-                return false;
-            }
-        });
         mListView = (ListView) findViewById(R.id.myListView);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View view) {
                 Intent intent = new Intent(DietActivity.this,Calculator.class);
                 startActivity(intent);
