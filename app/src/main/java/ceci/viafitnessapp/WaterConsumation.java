@@ -1,6 +1,10 @@
 package ceci.viafitnessapp;
 
 import android.annotation.SuppressLint;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -17,11 +21,13 @@ import static ceci.viafitnessapp.R.id.progressBar;
 public class WaterConsumation extends AppCompatActivity{
 
     private ProgressBar progressBar;
+    Button button;
     @Override
     protected void onCreate(Bundle saveInstanceStats) {
         super.onCreate(saveInstanceStats);
         setContentView(R.layout.water_consumption);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        button = (Button) findViewById(R.id.button3);
 
     }
     private int progress = 0;
@@ -45,4 +51,22 @@ public class WaterConsumation extends AppCompatActivity{
         if(progress == 100)
             Toast.makeText(WaterConsumation.this, "Congratulations, you reached your daily goal", Toast.LENGTH_LONG).show();
     }
+    protected void onPause(){
+        super.onPause();
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt("Data",progressBar.getProgress());
+        editor.commit();
+    }
+    public void onResume(){
+        super.onResume();
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        progress = sharedPref.getInt("Data", 0);
+        progressBar.setProgress(progress);
+    }
+    public void onStop(){
+        super.onStop();
+    }
+
 }
