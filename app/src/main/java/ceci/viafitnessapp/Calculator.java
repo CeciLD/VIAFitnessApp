@@ -12,7 +12,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 public class Calculator extends AppCompatActivity {
-
+//SOMETHING
     EditText weight;
     EditText height;
     EditText age;
