@@ -95,7 +95,7 @@ listView.setAdapter(excersiceAdapter);
                                 startActivity(toGlutes);
                                 break;
                             case 9:
-                                Intent toCardio = new Intent(ExcerciseActivity.this,CardioActivity.class);
+                                Intent toCardio = new Intent(ExcerciseActivity.this, CardioActivity.class);
                                 startActivity(toCardio);
                                 break;
                             case 10:

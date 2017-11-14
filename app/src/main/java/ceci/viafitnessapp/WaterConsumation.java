@@ -21,13 +21,13 @@ import static ceci.viafitnessapp.R.id.progressBar;
 public class WaterConsumation extends AppCompatActivity{
 
     private ProgressBar progressBar;
-    Button button;
+
     @Override
     protected void onCreate(Bundle saveInstanceStats) {
         super.onCreate(saveInstanceStats);
         setContentView(R.layout.water_consumption);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        button = (Button) findViewById(R.id.button3);
+
 
     }
     private int progress = 0;

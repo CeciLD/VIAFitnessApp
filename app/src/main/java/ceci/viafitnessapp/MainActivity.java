@@ -53,9 +53,10 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else if (id == R.id.custom_workout) {
-                    Toast.makeText(MainActivity.this, "Creating a Custom Workout", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this,CustomWorkout.class);
+                    startActivity(intent);
                 }
-                    else if (id == R.id.diets) {
+                else if (id == R.id.diets) {
                     Intent intent = new Intent(MainActivity.this,DietActivity.class);
                     startActivity(intent);
                 }

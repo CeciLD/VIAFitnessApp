@@ -8,6 +8,6 @@ public class Landmine180sActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.landmine_180s);
+
     }
 }
