@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.NotificationCompat;
 import android.view.View;
@@ -36,33 +37,63 @@ public class WaterConsumation extends AppCompatActivity {
             }
         });
 
+
     }
 
     private int progress = 0;
-
+    private boolean clicked;
     public void add250Button(View view) {
+        new CountDownTimer(30000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            public void onFinish() {
+                notificationcall();
+
+            }
+        }.start();
         if (progress < 100) {
             progressBar.setProgress(progress + 8);
             progress += 8;
+
         } else progress = 100;
 
         if (progress == 100)
             Toast.makeText(WaterConsumation.this, "Congratulations, you reached your daily goal", Toast.LENGTH_LONG).show();
     }
     public void notificationcall() {
-        NotificationCompat.Builder notificationBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-                .setDefaults(NotificationCompat.DEFAULT_ALL)
-                .setSmallIcon(R.drawable.calculato)
-                .setContentTitle("Drink water")
-                .setContentText("You didn't drink water in the past 2 hours");
 
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(1, notificationBuilder.build());
+            NotificationCompat.Builder notificationBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
+                    .setDefaults(NotificationCompat.DEFAULT_ALL)
+                    .setSmallIcon(R.drawable.water_consumption_glass)
+                    .setContentTitle("Drink water")
+                    .setContentText("You didn't drink water in the past 30 seconds");
+
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.notify(1, notificationBuilder.build());
+
+
     }
 
-
+    public void reset(View view){
+        progress = 0;
+        progressBar.setProgress(0);
+    }
     public void add500Button(View view) {
 
+        new CountDownTimer(30000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            public void onFinish() {
+                notificationcall();
+
+            }
+        }.start();
         if (progress < 100) {
             progressBar.setProgress(progress + 16);
             progress += 16;
