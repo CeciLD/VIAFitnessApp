@@ -29,14 +29,6 @@ public class WaterConsumation extends AppCompatActivity {
         super.onCreate(saveInstanceStats);
         setContentView(R.layout.water_consumption);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        Button btn = (Button) findViewById(R.id.button4);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                notificationcall();
-            }
-        });
-
 
     }
 
