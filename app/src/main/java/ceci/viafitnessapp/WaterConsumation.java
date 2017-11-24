@@ -31,24 +31,32 @@ public class WaterConsumation extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
     }
-
+    private boolean waterDrink;
     private int progress = 0;
     private boolean clicked;
-    public void add250Button(View view) {
+    public void countTimer(){
         new CountDownTimer(5000, 1000) {
-
             public void onTick(long millisUntilFinished) {
 
             }
 
             public void onFinish() {
-                notificationcall();
-
+                if(waterDrink = true){
+                    notificationcall();
+                }
+                waterDrink = false;
             }
         }.start();
+    }
+    public void add250Button(View view) {
+
         if (progress < 100) {
             progressBar.setProgress(progress + 8);
             progress += 8;
+
+            if(waterDrink = true){
+                countTimer();
+            }
 
         } else progress = 100;
 
@@ -74,18 +82,7 @@ public class WaterConsumation extends AppCompatActivity {
         progressBar.setProgress(0);
     }
     public void add500Button(View view) {
-
-        new CountDownTimer(30000, 1000) {
-
-            public void onTick(long millisUntilFinished) {
-
-            }
-
-            public void onFinish() {
-                notificationcall();
-
-            }
-        }.start();
+        countTimer();
         if (progress < 100) {
             progressBar.setProgress(progress + 16);
             progress += 16;
