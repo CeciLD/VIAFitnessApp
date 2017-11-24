@@ -35,7 +35,7 @@ public class WaterConsumation extends AppCompatActivity {
     private int progress = 0;
     private boolean clicked;
     public void countTimer(){
-        new CountDownTimer(5000, 1000) {
+        new CountDownTimer(30000, 1000) {
             public void onTick(long millisUntilFinished) {
 
             }
