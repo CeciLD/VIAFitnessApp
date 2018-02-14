@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
-class CustomWorkout extends AppCompatActivity {
+public class CustomWorkout extends AppCompatActivity {
 
     ImageButton imageButton;
 
